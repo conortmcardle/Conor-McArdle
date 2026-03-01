@@ -837,11 +837,15 @@ p + p { margin-top: var(--space-md); }
 }
 
 /* Homepage intro with headshot */
+.section--intro {
+  padding-top: var(--space-xl);
+}
+
 .intro-row {
   display: flex;
   align-items: flex-start;
   gap: var(--space-xl);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-lg) 0;
 }
 
 .intro-row .intro {
