@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+title: "Contact \u2014 Conor McArdle"
+description: "Get in touch with Conor McArdle, Digital Communications Specialist at the MIT School of Engineering."
+navKey: contact
+bodyClass: page-contact
+statusPath: "~/portfolio/contact.html"
+permalink: /contact/
+---
+
+<section class="contact-section">
+  <div class="container container--narrow">
+    <p class="section__label">// contact</p>
+    <h1 style="margin-bottom: var(--space-md);">Get in Touch</h1>
+    <p class="section__intro">Have a project in mind, a question, or just want to connect? I'd love to hear from you.</p>
+
+    <!-- Contact Info -->
+    <div class="contact-info" data-animate>
+      {% for item in contact %}
+      <div class="contact-info__item">
+        <span class="contact-info__key">{{ item.key | safe }}:</span>
+        <span class="contact-info__value">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.value }}</a>{% else %}{{ item.value }}{% endif %}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Contact Form -->
+    <div data-animate>
+      <p class="contact-form__title">// send a message</p>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <p class="hidden" style="display:none;">
+          <label>Don't fill this out: <input name="bot-field"></label>
+        </p>
+        <div class="form-group">
+          <label class="form-group__label" for="name">name</label>
+          <input class="form-group__input" type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-group__label" for="email">email</label>
+          <input class="form-group__input" type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-group__label" for="message">message</label>
+          <textarea class="form-group__textarea" id="message" name="message" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">send_message</button>
+      </form>
+    </div>
+
+  </div>
+</section>

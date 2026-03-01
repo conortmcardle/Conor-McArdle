@@ -1,0 +1,6 @@
+[
+  { "key": "home", "label": "Home", "url": "/" },
+  { "key": "work", "label": "Work", "url": "/work/" },
+  { "key": "about", "label": "About", "url": "/about/" },
+  { "key": "contact", "label": "Contact", "url": "/contact/" }
+]

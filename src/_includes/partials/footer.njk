@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <span>&copy; {{ site.author }} &middot; {{ site.location }}</span>
+      <div class="footer__links">
+        {% for link in footer %}
+        <a href="{{ link.url }}" class="footer__link" target="_blank" rel="noopener">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>

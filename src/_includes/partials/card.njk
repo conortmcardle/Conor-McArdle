@@ -1,0 +1,20 @@
+<article class="card" data-animate{% if animateDelay %} data-animate-delay="{{ animateDelay }}"{% endif %}>
+  <a href="{{ cardUrl }}" class="card__link">
+    <div class="card__image">
+      {% if cardImage %}
+      <img src="{{ cardImage }}" alt="{{ cardImageAlt }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      {% else %}
+      <div class="card__image-placeholder">{{ cardPlaceholder }}</div>
+      {% endif %}
+    </div>
+    <div class="card__body">
+      <span class="card__number">{{ cardNumber | padStart(2) }}</span>
+      <h3 class="card__title">{{ cardTitle }}</h3>
+      <p class="card__desc">{{ cardDesc }}</p>
+      <div class="card__meta">
+        <span class="card__meta-item"><span class="card__meta-key">role:</span> {{ cardRole }}</span>
+        <span class="card__meta-item"><span class="card__meta-key">{{ cardMetaLabel | default("timeline") }}:</span> {{ cardTimeline }}</span>
+      </div>
+    </div>
+  </a>
+</article>

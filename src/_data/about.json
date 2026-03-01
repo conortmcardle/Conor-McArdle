@@ -1,0 +1,24 @@
+{
+  "skills": [
+    "Video Production",
+    "Photography",
+    "Graphic Design",
+    "Web Design & Dev",
+    "CMS Administration",
+    "Social Media Strategy",
+    "Email Marketing",
+    "Content Strategy",
+    "Project Management",
+    "Institutional Storytelling"
+  ],
+  "education": {
+    "school": "University of Vermont",
+    "details": "Bachelor of Arts, English (2006\u20132010) \u2014 Graduated Summa Cum Laude from the College of Arts and Sciences.",
+    "activities": "Activities: UVM Writing Center, UVMtv, Integrated Humanities Program, Living and Learning Center (Creative Arts Suite)."
+  },
+  "training": [
+    { "name": "Intro to Project Management Bootcamp \u2014 General Assembly, Boston", "year": "2018" },
+    { "name": "Digital Marketing Foundation \u2014 Imparture / MIT Project Manus Custom Course", "year": "2018" },
+    { "name": "Learning Print Production \u2014 LinkedIn Learning", "year": "2022" }
+  ]
+}

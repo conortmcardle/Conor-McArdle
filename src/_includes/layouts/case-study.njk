@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+navKey: work
+---
+
+<article>
+  <header class="case-header">
+    <div class="container container--narrow">
+      <a href="/work/" class="case-header__back">&larr; All Work</a>
+      <h1 class="case-header__title">{{ caseTitle }}</h1>
+      <div class="case-meta">
+        {% for item in caseMeta %}
+        <div class="case-meta__item">
+          <span class="case-meta__key">{{ item.key }}</span>
+          <span class="case-meta__value">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.value }}</a>{% else %}{{ item.value }}{% endif %}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+
+  {{ content | safe }}
+</article>

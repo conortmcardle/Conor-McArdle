@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  {% include "partials/head.njk" %}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+
+  {% include "partials/nav.njk" %}
+
+  <main>
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+  {% include "partials/status-bar.njk" %}
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

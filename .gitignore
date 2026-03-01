@@ -3,3 +3,5 @@
 *.md
 .claude/
 Screenshot*
+_site/
+node_modules/

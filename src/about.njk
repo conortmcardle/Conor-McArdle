@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+title: "About \u2014 Conor McArdle"
+description: "Communications professional, filmmaker, photographer, designer, and former educator based in the Boston area. Digital Communications Specialist at MIT."
+navKey: about
+bodyClass: page-about
+statusPath: "~/portfolio/about.html"
+permalink: /about/
+---
+
+<!-- Header -->
+<section class="about-header">
+  <div class="container container--narrow">
+    <p class="section__label">// about</p>
+    <h1>About Me</h1>
+  </div>
+</section>
+
+<!-- Bio -->
+<section class="about-section" data-animate>
+  <div class="container container--narrow">
+    <p class="about-section__label">// bio</p>
+    <h2 class="about-section__title">Bio</h2>
+    <div class="about-bio-row">
+      <div class="headshot">
+        <img src="/images/bio/headshot.jpeg" alt="Conor McArdle" loading="lazy">
+      </div>
+      <div class="about-bio-text">
+        <p>I'm Conor McArdle — a communications professional, filmmaker, photographer, designer, and former educator based in the Boston area. I currently serve as the Digital Communications Specialist for the MIT School of Engineering, where I develop digital strategy, produce multimedia content, and co-led the redesign of engineering.mit.edu.</p>
+        <p>Before the Dean's Office, I spent seven years as the sole communications professional for MIT Project Manus, MIT's campus-wide makerspace initiative. Before MIT, I worked in independent school education — first as a Digital Arts teacher at Vermont Academy (where I won the Barbara Sweet Teacher of the Year Award in 2016), then as the Assistant Director of Multimedia Strategy and Production at Peddie School.</p>
+        <p>I graduated <em>Summa Cum Laude</em> from the University of Vermont with a B.A. in English.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What I Do -->
+<section class="about-section" data-animate>
+  <div class="container container--narrow">
+    <p class="about-section__label">// what i do</p>
+    <h2 class="about-section__title">What I Do</h2>
+    <p>I'm a generalist who goes deep. My work spans video production and editing, photography, graphic design, web design and development, CMS administration, social media strategy, email marketing, content strategy, project management, and institutional storytelling. I'm most effective when I can connect the strategic and the creative — understanding what an institution needs to say and then making it real across channels.</p>
+    <div class="skills-grid">
+      {% for skill in about.skills %}
+      <span class="skill-tag">{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section class="about-section" data-animate>
+  <div class="container container--narrow">
+    <p class="about-section__label">// education</p>
+    <h2 class="about-section__title">Education</h2>
+    <div class="education-item">
+      <p class="education-item__school">{{ about.education.school }}</p>
+      <p class="education-item__details">{{ about.education.details }}</p>
+      <p class="education-item__activities">{{ about.education.activities }}</p>
+    </div>
+
+    <h3 style="margin-top: var(--space-xl); margin-bottom: var(--space-md); font-size: 1rem; color: var(--text-muted);">Additional Training</h3>
+    <ul class="training-list">
+      {% for item in about.training %}
+      <li>
+        <span>{{ item.name }}</span>
+        <span class="training-year">{{ item.year }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- What Drives Me -->
+<section class="about-section" data-animate>
+  <div class="container container--narrow">
+    <p class="about-section__label">// what drives me</p>
+    <h2 class="about-section__title">What Drives Me</h2>
+    <p>I believe the best institutional communications are honest, crafted, and human. Whether I'm redesigning a flagship website, producing a video about student makers, or writing copy about why engineering matters — the goal is always the same: help people understand something true about a place, and make them feel something real about it.</p>
+    <p><strong>I care about clarity over cleverness, listening before building, and making work that lasts.</strong></p>
+  </div>
+</section>

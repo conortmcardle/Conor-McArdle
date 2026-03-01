@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+# Clean URLs: /about.html → /about/
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat/"
+  status = 301
+
+# SPA fallback for Decap CMS
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200

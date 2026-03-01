@@ -1,0 +1,89 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+
+  # ── Case Studies ──
+  - name: "work"
+    label: "Case Studies"
+    folder: "src/work"
+    create: true
+    extension: "njk"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Page Title", name: "title", widget: "string" }
+      - { label: "Meta Description", name: "description", widget: "text" }
+      - { label: "Case Study Title", name: "caseTitle", widget: "string" }
+      - { label: "Status Bar Path", name: "statusPath", widget: "string", default: "~/portfolio/work/" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Display Order", name: "displayOrder", widget: "number", value_type: "int" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
+      - { label: "Featured Order", name: "featuredOrder", widget: "number", value_type: "int", required: false }
+      - { label: "Card Title", name: "cardTitle", widget: "string" }
+      - { label: "Card Description", name: "cardDesc", widget: "text" }
+      - { label: "Card Role", name: "cardRole", widget: "string" }
+      - { label: "Card Timeline", name: "cardTimeline", widget: "string" }
+      - { label: "Card Image", name: "cardImage", widget: "image", required: false }
+      - { label: "Card Image Alt Text", name: "cardImageAlt", widget: "string", required: false }
+      - { label: "Card Placeholder Text", name: "cardPlaceholder", widget: "string", required: false }
+      - label: "Case Metadata"
+        name: "caseMeta"
+        widget: "list"
+        fields:
+          - { label: "Key", name: "key", widget: "string" }
+          - { label: "Value", name: "value", widget: "string" }
+          - { label: "URL", name: "url", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "code", default_language: "html", output_code_only: true }
+
+  # ── Blog (future) ──
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ── Site Settings ──
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Info"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Author", name: "author", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+      - label: "Navigation"
+        name: "navigation"
+        file: "src/_data/navigation.json"
+        fields:
+          - label: "Nav Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+      - label: "Footer Links"
+        name: "footer"
+        file: "src/_data/footer.json"
+        fields:
+          - label: "Links"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
