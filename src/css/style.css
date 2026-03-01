@@ -1077,6 +1077,284 @@ p + p { margin-top: var(--space-md); }
   color: var(--text-faint);
 }
 
+/* ── Manchester United Results Widget ── */
+
+.mufc-widget {
+  margin-top: var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.mufc-widget__loading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-faint);
+  padding: var(--space-md) 0;
+}
+
+.mufc-widget__spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: mufc-spin 0.8s linear infinite;
+}
+
+@keyframes mufc-spin {
+  to { transform: rotate(360deg); }
+}
+
+.mufc-widget__loading-text {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.mufc-widget__error-text {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.mufc-widget__error-text a {
+  color: var(--accent);
+}
+
+.mufc-widget__section-label {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.mufc-widget__section-label:first-child {
+  margin-top: 0;
+}
+
+.mufc-widget__match {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  transition: background var(--t-fast);
+}
+
+.mufc-widget__match-wrapper + .mufc-widget__match-wrapper {
+  border-top: 1px solid var(--border);
+}
+
+.mufc-widget__match--expandable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.mufc-widget__match--expandable:hover {
+  background: var(--bg-elevated);
+}
+
+.mufc-widget__date {
+  color: var(--text-faint);
+  font-size: 0.75rem;
+  min-width: 5.5em;
+  flex-shrink: 0;
+}
+
+.mufc-widget__teams {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-muted);
+}
+
+.mufc-widget__teams strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.mufc-widget__score {
+  font-weight: 600;
+  min-width: 3.5em;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.mufc-widget__result-indicator {
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 1.5em;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.mufc-widget__result--win {
+  color: var(--accent);
+}
+
+.mufc-widget__result--loss {
+  color: #e06c75;
+}
+
+[data-theme="light"] .mufc-widget__result--loss {
+  color: #c0392b;
+}
+
+.mufc-widget__result--draw {
+  color: var(--text-faint);
+}
+
+/* Chevron */
+.mufc-widget__chevron {
+  font-size: 0.55rem;
+  color: var(--text-faint);
+  flex-shrink: 0;
+  transition: transform var(--t-fast);
+  min-width: 1em;
+}
+
+.mufc-widget__match.is-expanded .mufc-widget__chevron {
+  transform: rotate(90deg);
+}
+
+/* Scorer Details Panel */
+.mufc-widget__details {
+  padding: var(--space-sm) var(--space-md) var(--space-sm) 2.5em;
+  background: var(--bg-elevated);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.mufc-widget__details-loading {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.mufc-widget__scorers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mufc-widget__scorer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.mufc-widget__scorer-time {
+  color: var(--text-faint);
+  min-width: 3.5em;
+  flex-shrink: 0;
+}
+
+.mufc-widget__scorer-name {
+  flex: 1;
+}
+
+.mufc-widget__scorer-team {
+  color: var(--text-faint);
+  font-size: 0.7rem;
+}
+
+.mufc-widget__no-scorers {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* Season Toggle */
+.mufc-widget__season-wrap {
+  margin-top: var(--space-sm);
+}
+
+.mufc-widget__toggle {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm) 0;
+  transition: opacity var(--t-fast);
+}
+
+.mufc-widget__toggle:hover {
+  opacity: 0.8;
+}
+
+.mufc-widget__season-results {
+  margin-top: var(--space-xs);
+}
+
+/* Upcoming match spacing */
+.mufc-widget__match--upcoming + .mufc-widget__match-wrapper {
+  margin-top: var(--space-xs);
+}
+
+.mufc-widget__match--upcoming {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.mufc-widget__match--upcoming .mufc-widget__score {
+  color: var(--text-faint);
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.mufc-widget__match--live {
+  border-left: 2px solid var(--accent);
+}
+
+.mufc-widget__live-badge {
+  font-size: 0.65rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  animation: cursor-blink 1.5s step-end infinite;
+}
+
+@media (max-width: 768px) {
+  .mufc-widget__match {
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-xs);
+    font-size: 0.8rem;
+  }
+
+  .mufc-widget__date {
+    font-size: 0.7rem;
+    min-width: 4.5em;
+  }
+
+  .mufc-widget__score {
+    min-width: 3em;
+  }
+
+  .mufc-widget__details {
+    padding-left: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .mufc-widget__date {
+    display: none;
+  }
+
+  .mufc-widget__chevron {
+    display: none;
+  }
+
+  .mufc-widget__details {
+    padding-left: var(--space-sm);
+  }
+}
+
 /* ── Contact ── */
 
 .contact-section {
